@@ -1,15 +1,14 @@
-# Enterprise Task & Workflow Management System
+## Authentication & Security
 
-Enterprise-grade full-stack application built with:
-- Vue.js 3 + TypeScript
-- Java 21 + Spring Boot
-- PostgreSQL
-- JWT-based security with role-based access control
+This project uses JWT-based authentication with Spring Security.
 
-## Branching Strategy
-- main → production-ready
-- develop → active development
-- feature/* → isolated features
+### Flow
+1. Client calls `/auth/login`
+2. Server issues JWT with role claim
+3. JWT is validated on every request via filter
+4. Role-based access enforced using method security
 
-## Status
-🚧 Under active development
+### Roles
+- ROLE_ADMIN
+- ROLE_MANAGER
+- ROLE_USER
